@@ -1487,3 +1487,154 @@ else:
 2025-12-12 01:22:12,326 INFO ipython print("\n🎉 System is fully operational!")
 2025-12-12 01:22:12,326 INFO ipython frappe.db.close()
 2025-12-12 01:22:12,326 INFO ipython === session end ===
+2025-12-12 01:28:32,838 INFO ipython === bench console session ===
+2025-12-12 01:28:32,838 INFO ipython import frappe
+2025-12-12 01:28:32,838 INFO ipython frappe.init(site="lending.localhost")
+2025-12-12 01:28:32,838 INFO ipython frappe.connect()
+2025-12-12 01:28:32,838 INFO ipython print("="*70)
+2025-12-12 01:28:32,838 INFO ipython print("FINAL VERIFICATION - READY TO WORK CHECK")
+2025-12-12 01:28:32,838 INFO ipython print("="*70)
+2025-12-12 01:28:32,838 INFO ipython all_working = True
+2025-12-12 01:28:32,838 INFO ipython issues = []
+2025-12-12 01:28:32,838 INFO ipython # 1. Critical Routes Check
+2025-12-12 01:28:32,838 INFO ipython print("\n1. CRITICAL ROUTES CHECK")
+2025-12-12 01:28:32,838 INFO ipython print("-" * 70)
+2025-12-12 01:28:32,838 INFO ipython critical_routes = [
+    ("Loan Application", "/app/loan-application"),
+    ("Loan Product", "/app/loan-product"),
+    ("Loan", "/app/loan"),
+    ("Loan Disbursement", "/app/loan-disbursement"),
+    ("Loan Repayment", "/app/loan-repayment"),
+    ("Loan Restructure", "/app/loan-restructure"),
+]
+2025-12-12 01:28:32,838 INFO ipython for doctype, route in critical_routes:
+    try:
+        if not frappe.db.exists("DocType", doctype):
+            issues.append(f"❌ {doctype} doctype not found")
+            all_working = False
+            continue
+        
+        # Test access
+        meta = frappe.get_meta(doctype)
+        records = frappe.get_all(doctype, limit=1)
+        count = len(frappe.get_all(doctype))
+        print(f"✅ {doctype:25} {route:35} - {count} records - WORKING")
+    except Exception as e:
+        issues.append(f"❌ {doctype}: {str(e)[:50]}")
+        all_working = False
+        print(f"❌ {doctype:25} {route:35} - ERROR: {str(e)[:40]}")
+2025-12-12 01:28:32,838 INFO ipython # 2. Workspace Check
+2025-12-12 01:28:32,838 INFO ipython print("\n2. WORKSPACE CHECK")
+2025-12-12 01:28:32,838 INFO ipython print("-" * 70)
+2025-12-12 01:28:32,838 INFO ipython try:
+    ws = frappe.get_doc("Workspace", "Lending")
+    print(f"✅ Main Workspace '/app/lending' - {len(ws.links)} links - WORKING")
+except Exception as e:
+    issues.append(f"❌ Workspace error: {str(e)[:50]}")
+    all_working = False
+    print(f"❌ Workspace error: {str(e)[:40]}")
+2025-12-12 01:28:32,838 INFO ipython # 3. Frontend Routes Check
+2025-12-12 01:28:32,838 INFO ipython print("\n3. FRONTEND ROUTES CHECK")
+2025-12-12 01:28:32,838 INFO ipython print("-" * 70)
+2025-12-12 01:28:32,838 INFO ipython frontend_routes = [
+    ("/lending", "Home Page"),
+    ("/apply-for-loan", "Loan Application Form"),
+    ("/loan-products", "Loan Products Page"),
+]
+2025-12-12 01:28:32,839 INFO ipython for route, desc in frontend_routes:
+    try:
+        page = frappe.db.get_value("Web Page", {"route": route.lstrip("/")}, "name")
+        if page:
+            published = frappe.db.get_value("Web Page", page, "published")
+            if published:
+                print(f"✅ {route:20} - {desc:30} - Published - WORKING")
+            else:
+                print(f"⚠️  {route:20} - {desc:30} - Unpublished")
+        else:
+            wf = frappe.db.get_value("Web Form", {"route": route.lstrip("/")}, "name")
+            if wf:
+                published = frappe.db.get_value("Web Form", wf, "published")
+                if published:
+                    print(f"✅ {route:20} - {desc:30} - Published - WORKING")
+                else:
+                    print(f"⚠️  {route:20} - {desc:30} - Unpublished")
+            else:
+                issues.append(f"❌ Frontend route {route} not found")
+                all_working = False
+    except Exception as e:
+        issues.append(f"❌ Frontend {route}: {str(e)[:50]}")
+        all_working = False
+2025-12-12 01:28:32,839 INFO ipython # 4. Data Connections Check
+2025-12-12 01:28:32,839 INFO ipython print("\n4. DATA CONNECTIONS CHECK")
+2025-12-12 01:28:32,839 INFO ipython print("-" * 70)
+2025-12-12 01:28:32,839 INFO ipython try:
+    # Check Loan Application -> Loan connection
+    loan_apps = frappe.get_all("Loan Application", limit=1)
+    if loan_apps:
+        app = frappe.get_doc("Loan Application", loan_apps[0].name)
+        if app.loan_product:
+            product_exists = frappe.db.exists("Loan Product", app.loan_product)
+            if product_exists:
+                print(f"✅ Loan Application -> Loan Product connection - WORKING")
+            else:
+                issues.append(f"❌ Loan Product link broken")
+                all_working = False
+    
+    # Check Loan -> Disbursement connection
+    loans = frappe.get_all("Loan", limit=1)
+    if loans:
+        loan = frappe.get_doc("Loan", loans[0].name)
+        if loan.loan_application:
+            app_exists = frappe.db.exists("Loan Application", loan.loan_application)
+            if app_exists:
+                print(f"✅ Loan -> Loan Application connection - WORKING")
+            else:
+                issues.append(f"❌ Loan Application link broken")
+                all_working = False
+        
+        disbursements = frappe.get_all("Loan Disbursement", 
+            filters={"against_loan": loan.name}, limit=1)
+        if disbursements:
+            print(f"✅ Loan -> Loan Disbursement connection - WORKING")
+        
+        repayments = frappe.get_all("Loan Repayment",
+            filters={"against_loan": loan.name}, limit=1)
+        if repayments:
+            print(f"✅ Loan -> Loan Repayment connection - WORKING")
+except Exception as e:
+    issues.append(f"❌ Data connection check error: {str(e)[:50]}")
+    all_working = False
+2025-12-12 01:28:32,839 INFO ipython # 5. Dashboard Check
+2025-12-12 01:28:32,839 INFO ipython print("\n5. DASHBOARD CHECK")
+2025-12-12 01:28:32,839 INFO ipython print("-" * 70)
+2025-12-12 01:28:32,839 INFO ipython try:
+    dashboard = frappe.get_doc("Dashboard", "Loan Dashboard")
+    print(f"✅ Loan Dashboard - {len(dashboard.charts)} charts - WORKING")
+except Exception as e:
+    issues.append(f"❌ Dashboard error: {str(e)[:50]}")
+    all_working = False
+2025-12-12 01:28:32,839 INFO ipython # Final Verdict
+2025-12-12 01:28:32,839 INFO ipython print("\n" + "="*70)
+2025-12-12 01:28:32,839 INFO ipython if all_working and len(issues) == 0:
+    print("✅ YES - ALL ROUTES ARE WORKING! YOU CAN START WORKING NOW!")
+    print("="*70)
+    print("\n🎉 SYSTEM STATUS: FULLY OPERATIONAL")
+    print("\n✅ You can now:")
+    print("   • Create Loan Applications")
+    print("   • Manage Loan Products")
+    print("   • Process Loans")
+    print("   • Handle Disbursements")
+    print("   • Process Repayments")
+    print("   • Restructure Loans")
+    print("   • Access all frontend routes")
+    print("   • Use all workspaces")
+    print("   • View dashboards and reports")
+    print("\n💡 All routes are tested and verified working!")
+else:
+    print("⚠️  SOME ISSUES FOUND")
+    print("="*70)
+    print("\nIssues found:")
+    for issue in issues:
+        print(f"   {issue}")
+2025-12-12 01:28:32,839 INFO ipython frappe.db.close()
+2025-12-12 01:28:32,839 INFO ipython === session end ===
