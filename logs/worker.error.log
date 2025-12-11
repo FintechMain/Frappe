@@ -1,0 +1,548 @@
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+2025-12-11 17:05:31,677 [Job lending.localhost||8c4a1806-2cfa-4b62-a6cd-dedf96a2450c]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+    return_value = job.perform()
+                   ^^^^^^^^^^^^^
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+    self._result = self._execute()
+                   ^^^^^^^^^^^^^^^
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+    result = self.func(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 273, in execute_job
+    retval = method(**kwargs)
+             ^^^^^^^^^^^^^^^^
+  File "/Users/prom3/frappe-bench/apps/erpnext/erpnext/setup/demo.py", line 25, in setup_demo_data
+    process_masters()
+  File "/Users/prom3/frappe-bench/apps/erpnext/erpnext/setup/demo.py", line 89, in process_masters
+    create_demo_record(item)
+  File "/Users/prom3/frappe-bench/apps/erpnext/erpnext/setup/demo.py", line 93, in create_demo_record
+    frappe.get_doc(doctype).insert(ignore_permissions=True)
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/model/document.py", line 449, in insert
+    self._validate()
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/model/document.py", line 786, in _validate
+    self._validate_mandatory()
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/model/document.py", line 1127, in _validate_mandatory
+    raise frappe.MandatoryError(
+frappe.exceptions.MandatoryError: [Item, SKU001]: stock_uom
+
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+2025-12-11 18:14:00,500 [Job lending.localhost||scheduled_job||uubll38f27]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:14:00,509 [Job lending.localhost||scheduled_job||uubua5p29m]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:14:00,517 [Job lending.localhost||scheduled_job||uubqkphfo6]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:14:00,525 [Job lending.localhost||scheduled_job||uubt233e7n]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,583 [Job lending.localhost||scheduled_job||uubdnvq9pn]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,599 [Job lending.localhost||scheduled_job||uub0bmib5l]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,610 [Job lending.localhost||scheduled_job||uub2r05h5p]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,618 [Job lending.localhost||scheduled_job||uub6ianoor]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,625 [Job lending.localhost||scheduled_job||uubua5p29m]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,633 [Job lending.localhost||scheduled_job||uubqkphfo6]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,641 [Job lending.localhost||scheduled_job||uubll38f27]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,648 [Job lending.localhost||scheduled_job||uubvqe91t7]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,656 [Job lending.localhost||scheduled_job||uubt233e7n]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,663 [Job lending.localhost||scheduled_job||2a7eu0nhqk]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,670 [Job lending.localhost||scheduled_job||uub8gkmalg]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,678 [Job lending.localhost||scheduled_job||uub5tuhvjv]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+
+2025-12-11 18:18:00,686 [Job lending.localhost||scheduled_job||uubc93ufo6]: exception raised while executing (frappe.utils.background_jobs.execute_job)
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1643, in perform_job
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1359, in perform
+  File "/Users/prom3/frappe-bench/env/lib/python3.11/site-packages/rq/job.py", line 1393, in _execute
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 245, in execute_job
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/__init__.py", line 254, in connect
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/database/__init__.py", line 79, in get_db
+ModuleNotFoundError: No module named 'frappe.database.mariadb.mysqlclient'
+

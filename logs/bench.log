@@ -1,0 +1,79 @@
+2025-12-11 16:16:43,960 DEBUG cd frappe-bench && python3.11 -m venv env
+2025-12-11 16:16:45,418 DEBUG cd frappe-bench && /Users/prom3/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2025-12-11 16:16:45,679 DEBUG cd frappe-bench && /Users/prom3/frappe-bench/env/bin/python -m pip install --quiet wheel
+2025-12-11 16:16:46,232 LOG Getting frappe
+2025-12-11 16:16:46,232 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2025-12-11 16:16:57,736 LOG Installing frappe
+2025-12-11 16:16:57,786 DEBUG cd /Users/prom3/frappe-bench && /Users/prom3/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/prom3/frappe-bench/apps/frappe 
+2025-12-11 16:17:58,793 DEBUG cd /Users/prom3/frappe-bench/apps/frappe && yarn install --check-files
+2025-12-11 16:18:03,882 DEBUG cd frappe-bench && bench build
+2025-12-11 16:18:04,000 INFO /opt/homebrew/bin/bench build
+2025-12-11 16:18:18,089 LOG setting up backups
+2025-12-11 16:18:20,481 LOG backups were set up
+2025-12-11 16:18:20,481 INFO Bench frappe-bench initialized
+2025-12-11 16:18:37,893 INFO /opt/homebrew/bin/bench get-app lending
+2025-12-11 16:18:38,536 LOG Getting lending
+2025-12-11 16:18:38,536 DEBUG cd ./apps && git clone https://github.com/frappe/lending.git  --depth 1 --origin upstream
+2025-12-11 16:18:39,913 LOG Installing lending
+2025-12-11 16:18:39,913 DEBUG cd /Users/prom3/frappe-bench && /Users/prom3/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/prom3/frappe-bench/apps/lending 
+2025-12-11 16:18:41,191 DEBUG bench build --app lending
+2025-12-11 16:18:41,260 INFO /opt/homebrew/bin/bench build --app lending
+2025-12-11 16:19:14,380 INFO /opt/homebrew/bin/bench get-app lending
+2025-12-11 16:19:17,570 INFO App moved from apps/lending to archived/apps/lending-2025-12-11
+2025-12-11 16:19:17,583 LOG Getting lending
+2025-12-11 16:19:17,583 DEBUG cd ./apps && git clone https://github.com/frappe/lending.git --branch develop --depth 1 --origin upstream
+2025-12-11 16:19:19,047 LOG Installing lending
+2025-12-11 16:19:19,047 DEBUG cd /Users/prom3/frappe-bench && /Users/prom3/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/prom3/frappe-bench/apps/lending 
+2025-12-11 16:19:20,144 DEBUG bench build --app lending
+2025-12-11 16:19:20,228 INFO /opt/homebrew/bin/bench build --app lending
+2025-12-11 16:19:30,218 INFO /opt/homebrew/bin/bench get-app lending
+2025-12-11 16:19:56,988 INFO /opt/homebrew/bin/bench new-site lending.localhost
+2025-12-11 16:20:55,993 INFO /opt/homebrew/bin/bench new-site lending.localhost
+2025-12-11 16:21:53,622 INFO /opt/homebrew/bin/bench new-site lending.localhost
+2025-12-11 16:22:44,135 INFO /opt/homebrew/bin/bench new-site lending.localhost --force
+2025-12-11 16:23:13,118 INFO /opt/homebrew/bin/bench new-site lending.localhost --force
+2025-12-11 16:23:26,860 INFO /opt/homebrew/bin/bench new-site lending.localhost --force
+2025-12-11 16:27:41,467 INFO /opt/homebrew/bin/bench new-site lending.localhost --force
+2025-12-11 16:27:55,032 INFO /opt/homebrew/bin/bench new-site lending.localhost --force
+2025-12-11 16:28:55,131 INFO /opt/homebrew/bin/bench get-app lending
+2025-12-11 16:29:14,837 INFO /opt/homebrew/bin/bench new-site lending.localhost
+2025-12-11 16:29:34,933 INFO /opt/homebrew/bin/bench start
+2025-12-11 16:29:35,817 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-12-11 16:29:35,817 INFO /opt/homebrew/bin/bench watch
+2025-12-11 16:29:35,823 INFO /opt/homebrew/bin/bench schedule
+2025-12-11 16:29:35,831 INFO /opt/homebrew/bin/bench worker
+2025-12-11 16:33:00,118 INFO /opt/homebrew/bin/bench new-site lending.localhost --force
+2025-12-11 16:36:51,393 INFO /opt/homebrew/bin/bench new-site lending.localhost --force
+2025-12-11 16:37:49,871 INFO /opt/homebrew/bin/bench --site lending.localhost install-app lending
+2025-12-11 16:38:02,647 INFO /opt/homebrew/bin/bench --site lending.localhost install-app lending
+2025-12-11 16:38:58,010 INFO /opt/homebrew/bin/bench get-app erpnext
+2025-12-11 16:38:58,672 LOG Getting erpnext
+2025-12-11 16:38:58,672 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git  --depth 1 --origin upstream
+2025-12-11 16:39:09,877 LOG Installing erpnext
+2025-12-11 16:39:09,878 DEBUG cd /Users/prom3/frappe-bench && /Users/prom3/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/prom3/frappe-bench/apps/erpnext 
+2025-12-11 16:39:32,022 DEBUG cd /Users/prom3/frappe-bench/apps/erpnext && yarn install --check-files
+2025-12-11 16:39:32,722 DEBUG bench build --app erpnext
+2025-12-11 16:39:32,818 INFO /opt/homebrew/bin/bench build --app erpnext
+2025-12-11 16:39:46,205 INFO /opt/homebrew/bin/bench --site lending.localhost install-app erpnext
+2025-12-11 16:42:27,835 INFO /opt/homebrew/bin/bench start
+2025-12-11 16:42:28,154 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-12-11 16:42:28,164 INFO /opt/homebrew/bin/bench schedule
+2025-12-11 16:42:28,167 INFO /opt/homebrew/bin/bench worker
+2025-12-11 16:42:28,172 INFO /opt/homebrew/bin/bench watch
+2025-12-11 16:43:06,875 INFO /opt/homebrew/bin/bench --site lending.localhost install-app erpnext
+2025-12-11 16:43:15,818 INFO /opt/homebrew/bin/bench --site lending.localhost install-app lending
+2025-12-11 16:46:35,697 INFO /opt/homebrew/bin/bench --site lending.localhost console
+2025-12-11 16:47:35,671 INFO /opt/homebrew/bin/bench --site lending.localhost console
+2025-12-11 16:51:27,010 INFO /opt/homebrew/bin/bench start
+2025-12-11 16:51:54,113 INFO /opt/homebrew/bin/bench start
+2025-12-11 16:53:26,122 INFO /opt/homebrew/bin/bench start
+2025-12-11 16:55:06,385 INFO /opt/homebrew/bin/bench start
+2025-12-11 16:55:06,607 INFO /opt/homebrew/bin/bench serve --port 8000
+2025-12-11 16:55:06,608 INFO /opt/homebrew/bin/bench schedule
+2025-12-11 16:55:06,619 INFO /opt/homebrew/bin/bench watch
+2025-12-11 16:55:06,620 INFO /opt/homebrew/bin/bench worker
+2025-12-11 16:57:00,462 INFO /opt/homebrew/bin/bench use lending.localhost
+2025-12-11 16:58:30,173 INFO /opt/homebrew/bin/bench --site lending.localhost add-to-hosts
+2025-12-11 16:59:26,490 INFO /opt/homebrew/bin/bench use lending.localhost
+2025-12-11 17:03:25,780 INFO /opt/homebrew/bin/bench --site lending.localhost set-admin-password admin
+2025-12-11 18:00:00,808 INFO /opt/homebrew/bin/bench --verbose --site all backup

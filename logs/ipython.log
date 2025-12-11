@@ -1,0 +1,104 @@
+2025-12-11 16:50:14,132 INFO ipython === bench console session ===
+2025-12-11 16:50:14,132 INFO ipython import frappe
+
+# 1. Create the Company
+if not frappe.db.exists("Company", "My Lending Co"):
+    company = frappe.get_doc({
+        "doctype": "Company",
+        "company_name": "My Lending Co",
+        "abbr": "MLC",
+        "default_currency": "INR",
+        "country": "India"
+    })
+    company.insert()
+    frappe.db.commit()
+    print("✅ Company Created")
+else:
+    print("ℹ️ Company already exists")
+
+# 2. Create Required Bank & Loan Accounts
+accounts = [
+    {"name": "Disbursement Account", "parent": "Bank Accounts - MLC", "type": "Bank"},
+    {"name": "Repayment Account", "parent": "Bank Accounts - MLC", "type": "Bank"},
+    {"name": "Loan Assets", "parent": "Current Assets - MLC", "type": "Receivable"},
+    {"name": "Interest Income", "parent": "Direct Income - MLC", "type": "Income"},
+    {"name": "Penalty Income", "parent": "Direct Income - MLC", "type": "Income"}
+]
+
+for acc in accounts:
+    if not frappe.db.exists("Account", acc["name"] + " - MLC"):
+        try:
+            new_acc = frappe.get_doc({
+                "doctype": "Account",
+                "account_name": acc["name"],
+                "parent_account": acc["parent"],
+                "company": "My Lending Co",
+                "account_type": acc["type"],
+                "currency": "INR"
+            })
+            new_acc.insert()
+            print(f"✅ Created Account: {acc['name']}")
+        except Exception as e:
+            print(f"⚠️ Could not create {acc['name']} (Parent might be missing)")
+    
+frappe.db.commit()
+print("🎉 Setup Complete!")
+2025-12-11 16:50:14,132 INFO ipython import frappe
+
+# --- STEP 1: FIX THE MISSING DATA ---
+# We need to create 'Warehouse Types' manually so the Company creation doesn't crash
+required_types = ["Transit", "Store", "Finished Goods", "Work In Progress"]
+for type_name in required_types:
+    if not frappe.db.exists("Warehouse Type", type_name):
+        frappe.get_doc({
+            "doctype": "Warehouse Type",
+            "name": type_name
+        }).insert(ignore_permissions=True)
+        print(f"🛠️  Fixed missing data: {type_name}")
+
+frappe.db.commit()
+
+# --- STEP 2: CREATE THE COMPANY ---
+if not frappe.db.exists("Company", "My Lending Co"):
+    company = frappe.get_doc({
+        "doctype": "Company",
+        "company_name": "My Lending Co",
+        "abbr": "MLC",
+        "default_currency": "INR",
+        "country": "India"
+    })
+    company.insert()
+    frappe.db.commit()
+    print("✅ Company Created: My Lending Co")
+else:
+    print("ℹ️  Company already exists")
+
+# --- STEP 3: CREATE THE ACCOUNTS ---
+accounts = [
+    {"name": "Disbursement Account", "parent": "Bank Accounts - MLC", "type": "Bank"},
+    {"name": "Repayment Account", "parent": "Bank Accounts - MLC", "type": "Bank"},
+    {"name": "Loan Assets", "parent": "Current Assets - MLC", "type": "Receivable"},
+    {"name": "Interest Income", "parent": "Direct Income - MLC", "type": "Income"},
+    {"name": "Penalty Income", "parent": "Direct Income - MLC", "type": "Income"}
+]
+
+for acc in accounts:
+    if not frappe.db.exists("Account", acc["name"] + " - MLC"):
+        try:
+            new_acc = frappe.get_doc({
+                "doctype": "Account",
+                "account_name": acc["name"],
+                "parent_account": acc["parent"],
+                "company": "My Lending Co",
+                "account_type": acc["type"],
+                "currency": "INR"
+            })
+            new_acc.insert()
+            print(f"✅ Created Account: {acc['name']}")
+        except Exception as e:
+            # If parent account is missing, we skip (it might be named differently in your version)
+            print(f"⚠️  Skipped {acc['name']} (Parent account check required)")
+
+frappe.db.commit()
+print("🎉 SETUP COMPLETE! Type 'exit' to leave.")
+2025-12-11 16:50:14,132 INFO ipython === session end ===

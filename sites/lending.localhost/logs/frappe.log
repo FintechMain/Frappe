@@ -1,0 +1,39 @@
+2025-12-11 16:43:23,935 ERROR frappe Failed to capture exception
+Site: lending.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 117, in capture_exception
+    set_scope(scope)
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/sentry.py", line 70, in set_scope
+    path = frappe.request.path
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/local.py", line 66, in __getattr__
+    return getattr(self._get_current_object(), name)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prom3/frappe-bench/apps/frappe/frappe/utils/local.py", line 55, in _get_current_object
+    raise RuntimeError("object is not bound") from None
+RuntimeError: object is not bound
+2025-12-11 17:06:23,810 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'New Loans', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-12-11 17:06:33,037 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'New Loans', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-12-11 17:06:33,055 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'Loan Disbursements', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-12-11 17:06:33,071 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'Loan Interest Accrual', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-12-11 17:08:26,567 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'New Loans', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-12-11 17:18:32,964 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'New Loans', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-12-11 17:50:59,072 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'New Loans', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
+2025-12-11 18:04:56,991 ERROR frappe New Exception collected in error log
+Site: lending.localhost
+Form Dict: {'chart_name': 'New Loans', 'refresh': '1', 'time_interval': '', 'timespan': '', 'from_date': '', 'to_date': '', 'heatmap_year': '', 'cmd': 'frappe.desk.doctype.dashboard_chart.dashboard_chart.get'}
