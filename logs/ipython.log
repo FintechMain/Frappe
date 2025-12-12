@@ -1638,3 +1638,74 @@ else:
         print(f"   {issue}")
 2025-12-12 01:28:32,839 INFO ipython frappe.db.close()
 2025-12-12 01:28:32,839 INFO ipython === session end ===
+2025-12-12 01:38:36,443 INFO ipython === bench console session ===
+2025-12-12 01:38:36,443 INFO ipython import frappe
+2025-12-12 01:38:36,443 INFO ipython frappe.init(site="lending.localhost")
+2025-12-12 01:38:36,443 INFO ipython frappe.connect()
+2025-12-12 01:38:36,443 INFO ipython # Test if API endpoints are accessible
+2025-12-12 01:38:36,443 INFO ipython print("="*70)
+2025-12-12 01:38:36,443 INFO ipython print("TESTING LOAN ORIGINATION API ENDPOINTS")
+2025-12-12 01:38:36,443 INFO ipython print("="*70)
+2025-12-12 01:38:36,443 INFO ipython try:
+    # Check if the API module can be imported
+    from lending.api import loan_origination
+    print("✅ API module imported successfully")
+    
+    # List available endpoints
+    endpoints = [
+        "create_loan_application",
+        "get_loan_application",
+        "update_loan_application_status",
+        "create_loan_from_application",
+        "sync_loan_application",
+        "get_all_loan_applications",
+        "get_loan_product",
+        "get_all_loan_products"
+    ]
+    
+    print("\nAvailable API Endpoints:")
+    for endpoint in endpoints:
+        if hasattr(loan_origination, endpoint):
+            print(f"   ✅ {endpoint}")
+        else:
+            print(f"   ❌ {endpoint} - Not found")
+    
+    print("\n✅ API endpoints are ready!")
+    print("\nAPI Base URL: http://lending.localhost:8000/api/method/lending.api.loan_origination.<endpoint>")
+    
+except Exception as e:
+    print(f"❌ Error: {e}")
+    import traceback
+    traceback.print_exc()
+2025-12-12 01:38:36,443 INFO ipython frappe.db.close()
+2025-12-12 01:38:36,444 INFO ipython === session end ===
+2025-12-12 01:39:56,741 INFO ipython === bench console session ===
+2025-12-12 01:39:56,741 INFO ipython import frappe
+2025-12-12 01:39:56,741 INFO ipython frappe.init(site="lending.localhost")
+2025-12-12 01:39:56,741 INFO ipython frappe.connect()
+2025-12-12 01:39:56,741 INFO ipython # Verify files are in place
+2025-12-12 01:39:56,741 INFO ipython import os
+2025-12-12 01:39:56,741 INFO ipython files_to_check = [
+    "apps/lending/lending/public/js/loan_origination_api.js",
+    "apps/lending/lending/api/loan_origination.py",
+    "apps/lending/LOAN_ORIGINATION_API_GUIDE.md"
+]
+2025-12-12 01:39:56,741 INFO ipython print("="*70)
+2025-12-12 01:39:56,741 INFO ipython print("VERIFYING FILES CREATED")
+2025-12-12 01:39:56,741 INFO ipython print("="*70)
+2025-12-12 01:39:56,741 INFO ipython for file_path in files_to_check:
+    full_path = os.path.join(frappe.get_site_path("..", ".."), file_path)
+    if os.path.exists(full_path):
+        size = os.path.getsize(full_path)
+        print(f"✅ {file_path} ({size} bytes)")
+    else:
+        print(f"❌ {file_path} - Not found")
+2025-12-12 01:39:56,742 INFO ipython print("\n✅ All files created successfully!")
+2025-12-12 01:39:56,742 INFO ipython print("\n📝 Next Steps:")
+2025-12-12 01:39:56,742 INFO ipython print("   1. Update FRAPPE_CONFIG in loan_origination_api.js with your credentials")
+2025-12-12 01:39:56,742 INFO ipython print("   2. Include the JS file in your HTML or Node.js project")
+2025-12-12 01:39:56,742 INFO ipython print("   3. Call initializeFrappeConnection() to connect")
+2025-12-12 01:39:56,742 INFO ipython print("   4. Use the API methods to interact with Frappe")
+2025-12-12 01:39:56,742 INFO ipython print("\n📚 See LOAN_ORIGINATION_API_GUIDE.md for detailed documentation")
+2025-12-12 01:39:56,742 INFO ipython frappe.db.close()
+2025-12-12 01:39:56,742 INFO ipython === session end ===
