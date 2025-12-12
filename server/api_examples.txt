@@ -1,0 +1,341 @@
+################################################################################
+#                    LOAN MANAGEMENT API - CURL EXAMPLES                      #
+#                         Base URL: http://localhost:5001                     #
+################################################################################
+
+################################################################################
+#                            LOAN CATEGORY                                    #
+################################################################################
+
+# ────────────────────────────────────────────────────────────────────────────
+# CREATE - Create a new loan category
+# ────────────────────────────────────────────────────────────────────────────
+curl -X POST http://localhost:5001/api/loan-categories \
+  -H "Content-Type: application/json" \
+  -d '{
+    "loan_category_code": "myloan",
+    "loan_category_name": "iit Loan",
+    "disabled": 0
+  }'
+
+# Expected Response:
+# {"data":{"creation":"2025-12-12 14:21:46.169734","disabled":0,"docstatus":0,"doctype":"Loan Category","idx":0,"loan_category_code":"myloan","loan_category_name":"iit Loan","modified":"2025-12-12 14:21:46.169734","modified_by":"nishant202mishra@gmail.com","name":"myloan","owner":"nishant202mishra@gmail.com"}}
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ALL - Get all loan categories
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-categories
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ONE - Get a specific loan category
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-categories/myloan
+
+# ────────────────────────────────────────────────────────────────────────────
+# UPDATE - Update a loan category
+# ────────────────────────────────────────────────────────────────────────────
+curl -X PUT http://localhost:5001/api/loan-categories/myloan \
+  -H "Content-Type: application/json" \
+  -d '{
+    "loan_category_name": "Updated Loan Name"
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# DELETE - Delete a loan category
+# ────────────────────────────────────────────────────────────────────────────
+curl -X DELETE http://localhost:5001/api/loan-categories/myloan
+
+# Expected Response:
+# {"data":"ok"}
+
+################################################################################
+#                            LOAN PRODUCT                                     #
+################################################################################
+
+# ────────────────────────────────────────────────────────────────────────────
+# CREATE - Create a new loan product
+# ────────────────────────────────────────────────────────────────────────────
+curl -X POST http://localhost:5001/api/loan-products \
+  -H "Content-Type: application/json" \
+  -d '{
+    "product_code": "PL-001",
+    "product_name": "Personal Loan Product",
+    "rate_of_interest": 12.5,
+    "company": "Your Company",
+    "loan_category": "myloan",
+    "maximum_loan_amount": 500000,
+    "penalty_interest_rate": 2.0,
+    "min_days_bw_disbursement_first_repayment": 30,
+    "is_term_loan": 1,
+    "disabled": 0,
+    "payment_account": "Payment Account - _TC",
+    "loan_account": "Loan Account - _TC",
+    "interest_income_account": "Interest Income Account - _TC",
+    "interest_accrued_account": "Interest Accrued Account - _TC",
+    "penalty_income_account": "Penalty Income Account - _TC",
+    "broken_period_interest_recovery_account": "BPI Recovery Account - _TC",
+    "disbursement_account": "Disbursement Account - _TC",
+    "security_deposit_account": "Security Deposit Account - _TC",
+    "write_off_account": "Write Off Account - _TC",
+    "write_off_recovery_account": "Write Off Recovery Account - _TC",
+    "repayment_schedule_type": "Monthly as per repayment start date",
+    "repayment_date_on": "End of the current month",
+    "grace_period_in_days": 5,
+    "days_past_due_threshold_for_npa": 90,
+    "excess_amount_acceptance_limit": 1000,
+    "write_off_amount": 0,
+    "validate_normal_repayment": 1,
+    "loan_charges": [
+      {
+        "charge": "Processing Fee",
+        "amount": 5000,
+        "account": "Charges Account - _TC"
+      }
+    ]
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ALL - Get all loan products
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-products
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ONE - Get a specific loan product
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-products/PL-001
+
+# ────────────────────────────────────────────────────────────────────────────
+# UPDATE - Update a loan product
+# ────────────────────────────────────────────────────────────────────────────
+curl -X PUT http://localhost:5001/api/loan-products/PL-001 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "rate_of_interest": 13.0,
+    "maximum_loan_amount": 600000
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# DELETE - Delete a loan product
+# ────────────────────────────────────────────────────────────────────────────
+curl -X DELETE http://localhost:5001/api/loan-products/PL-001
+
+################################################################################
+#                         LOAN APPLICATION                                    #
+################################################################################
+
+# ────────────────────────────────────────────────────────────────────────────
+# CREATE - Create a new loan application
+# ────────────────────────────────────────────────────────────────────────────
+curl -X POST http://localhost:5001/api/loan-applications \
+  -H "Content-Type: application/json" \
+  -d '{
+    "applicant_type": "Customer",
+    "company": "Your Company",
+    "posting_date": "2025-12-12",
+    "loan_product": "PL-001",
+    "loan_amount": 200000,
+    "description": "Personal loan for home renovation",
+    "first_name": "John",
+    "last_name": "Doe",
+    "applicant_email_address": "john.doe@example.com",
+    "applicant_phone_number": "+1234567890",
+    "address_line_1": "123 Main Street",
+    "address_line_2": "Apt 4B",
+    "city": "New York",
+    "state": "NY",
+    "country": "United States",
+    "zip_code": 10001,
+    "is_secured_loan": 0,
+    "repayment_method": "Repay Over Number of Periods",
+    "repayment_periods": 24,
+    "proposed_pledges": []
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ALL - Get all loan applications
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-applications
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ONE - Get a specific loan application
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-applications/ACC-LOAP-2025-00001
+
+# ────────────────────────────────────────────────────────────────────────────
+# UPDATE - Update a loan application
+# ────────────────────────────────────────────────────────────────────────────
+curl -X PUT http://localhost:5001/api/loan-applications/ACC-LOAP-2025-00001 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "loan_amount": 250000,
+    "status": "Approved"
+  }'
+
+# Note: Cannot update submitted documents (docstatus=1) - this is expected behavior
+
+# ────────────────────────────────────────────────────────────────────────────
+# DELETE - Delete a loan application
+# ────────────────────────────────────────────────────────────────────────────
+curl -X DELETE http://localhost:5001/api/loan-applications/ACC-LOAP-2025-00001
+
+################################################################################
+#                                LOAN                                         #
+################################################################################
+
+# ────────────────────────────────────────────────────────────────────────────
+# CREATE - Create a new loan
+# ────────────────────────────────────────────────────────────────────────────
+curl -X POST http://localhost:5001/api/loans \
+  -H "Content-Type: application/json" \
+  -d '{
+    "applicant_type": "Customer",
+    "applicant": "CUST-001",
+    "company": "Your Company",
+    "posting_date": "2025-12-12",
+    "loan_product": "PL-001",
+    "loan_amount": 200000,
+    "loan_application": "ACC-LOAP-2025-00001",
+    "disbursement_date": "2025-12-15",
+    "rate_of_interest": 12.5,
+    "penalty_charges_rate": 2.0,
+    "is_term_loan": 1,
+    "is_secured_loan": 0,
+    "repayment_schedule_type": "Monthly as per repayment start date",
+    "repayment_start_date": "2026-01-15",
+    "repayment_method": "Repay Over Number of Periods",
+    "repayment_periods": 24,
+    "repayment_frequency": "Monthly",
+    "treatment_of_interest": "Capitalize",
+    "disbursement_account": "Disbursement Account - _TC",
+    "payment_account": "Payment Account - _TC",
+    "loan_account": "Loan Account - _TC",
+    "interest_income_account": "Interest Income Account - _TC",
+    "penalty_income_account": "Penalty Income Account - _TC",
+    "cost_center": "Main - _TC",
+    "loan_charges": []
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ALL - Get all loans
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loans
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ONE - Get a specific loan
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loans/ACC-LOAN-2025-00001
+
+# ────────────────────────────────────────────────────────────────────────────
+# UPDATE - Update a loan
+# ────────────────────────────────────────────────────────────────────────────
+curl -X PUT http://localhost:5001/api/loans/ACC-LOAN-2025-00001 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "loan_amount": 250000,
+    "rate_of_interest": 13.0
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# DELETE - Delete a loan
+# ────────────────────────────────────────────────────────────────────────────
+curl -X DELETE http://localhost:5001/api/loans/ACC-LOAN-2025-00001
+
+################################################################################
+#                         LOAN RESTRUCTURE                                    #
+################################################################################
+
+# ────────────────────────────────────────────────────────────────────────────
+# CREATE - Create a new loan restructure
+# ────────────────────────────────────────────────────────────────────────────
+curl -X POST http://localhost:5001/api/loan-restructures \
+  -H "Content-Type: application/json" \
+  -d '{
+    "loan": "ACC-LOAN-2025-00001",
+    "restructure_date": "2025-12-20 10:00:00",
+    "restructure_type": "Normal Restructure",
+    "reason_for_restructure": "Customer facing temporary financial difficulties",
+    "new_rate_of_interest": 11.0,
+    "new_repayment_method": "Repay Over Number of Periods",
+    "new_repayment_period_in_months": 36,
+    "repayment_start_date": "2026-01-15",
+    "treatment_of_normal_interest": "Capitalize",
+    "treatment_of_penal_interest": "Capitalize",
+    "treatment_of_other_charges": "Capitalize",
+    "unaccrued_interest_treatment": "Capitalize",
+    "waive_off_restructure_charges": 0,
+    "restructure_charges": 5000
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ALL - Get all loan restructures
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-restructures
+
+# ────────────────────────────────────────────────────────────────────────────
+# GET ONE - Get a specific loan restructure
+# ────────────────────────────────────────────────────────────────────────────
+curl http://localhost:5001/api/loan-restructures/LOAN-RES-2025-00001
+
+# ────────────────────────────────────────────────────────────────────────────
+# UPDATE - Update a loan restructure
+# ────────────────────────────────────────────────────────────────────────────
+curl -X PUT http://localhost:5001/api/loan-restructures/LOAN-RES-2025-00001 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "status": "Approved",
+    "new_rate_of_interest": 10.5
+  }'
+
+# ────────────────────────────────────────────────────────────────────────────
+# DELETE - Delete a loan restructure
+# ────────────────────────────────────────────────────────────────────────────
+curl -X DELETE http://localhost:5001/api/loan-restructures/LOAN-RES-2025-00001
+
+################################################################################
+#                         LOAN DISBURSEMENT                                   #
+################################################################################
+
+# ────────────────────────────────────────────────────────────────────────────
+# CREATE - Create a loan disbursement with all fields
+# ────────────────────────────────────────────────────────────────────────────
+curl -X POST http://localhost:5001/api/loan-disbursements \
+  -H "Content-Type: application/json" \
+  -d '{
+    "against_loan": "LOAN-001",
+    "disbursement_date": "2025-12-12",
+    "disbursed_amount": 100000,
+    "bank_account": "BANK-001",
+    "repayment_start_date": "2026-01-01",
+    "repayment_frequency": "Monthly",
+    "repayment_method": "Repay Over Number of Periods",
+    "tenure": 12,
+    "is_term_loan": 1,
+    "withhold_security_deposit": 0,
+    "reference_date": "2025-12-12",
+    "reference_number": "REF-12345",
+    "cost_center": "CC-001",
+    "disbursement_account": "ACC-001",
+    "refund_account": "ACC-002",
+    "mode_of_payment": "Bank Transfer",
+    "broken_period_interest_days": 0,
+    "days_past_due": 0,
+    "principal_amount_paid": 0,
+    "bpi_difference_date": "2025-12-12",
+    "bpi_amount_difference": 0,
+    "loan_disbursement_charges": [
+      {
+        "charge": "CHARGE-001",
+        "amount": 1000,
+        "account": "ACC-003"
+      },
+      {
+        "charge": "CHARGE-002",
+        "amount": 500,
+        "account": "ACC-004"
+      }
+    ]
+  }'
+
+################################################################################
+#                              END OF FILE                                    #
+################################################################################
