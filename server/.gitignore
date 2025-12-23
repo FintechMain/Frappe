@@ -1,0 +1,13 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+myenv
+__pycache__
+generated
+
+dist
+
+# Word temporary lock files
+~$*.docx
+~$*.doc
