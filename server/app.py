@@ -2,7 +2,15 @@
 Main API Gateway Server for Loan Management System
 Acts as a proxy/gateway to Frappe backend
 """
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 from flask import Flask, jsonify
+from utils import make_frappe_request
+import os
 
 # Import all blueprints
 from loan_categories import loan_categories_bp
@@ -80,6 +88,27 @@ def health_check():
             'Accounts'
         ]
     }), 200
+
+
+@app.route('/health/frappe', methods=['GET'])
+def frappe_health_check():
+    """Check connection to Frappe backend"""
+    # Try to get the logged in user, which verifies the API key/secret
+    status_code, response = make_frappe_request('GET', '/api/method/frappe.auth.get_logged_user')
+    
+    if status_code == 200:
+        return jsonify({
+            'status': 'connected',
+            'frappe_url': os.getenv('FRAPPE_BASE_URL'),
+            'user': response.get('message')
+        }), 200
+    else:
+        return jsonify({
+            'status': 'error',
+            'message': 'Failed to connect to Frappe',
+            'details': response
+        }), 502
+
 
 
 if __name__ == '__main__':
