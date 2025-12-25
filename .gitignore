@@ -1,8 +1,0 @@
-config/pids/redis_queue.rdb
-
-# Log files
-logs/*.log
-sites/*/logs/*.log
-
-# Redis queue files
-config/pids/*.rdb
